@@ -10,7 +10,6 @@ class Calendar extends Component {
       constructor() {
         super()
         this.state = {
-          selectedMonth: new Date().getMonth(),
           dayClicked:new Date().getTime()
         }
       }
@@ -22,6 +21,7 @@ class Calendar extends Component {
         let endDate = new Date(2020, 2, 8)
         let date = new Date(2019, month);
         let now = new Date();
+        let select = new Date(parseInt(this.state.dayClicked));
         
         function getWeekNo(dayInMonth){
           let numberOfDays = (new Date(2019, month, dayInMonth+2).getTime() - startDate.getTime())/(24*60*60*1000)
@@ -30,8 +30,8 @@ class Calendar extends Component {
             return weekNo
           }
         }
-        let select = new Date(now.getFullYear(), this.state.selectedMonth, 1);
-        select.setTime(this.state.dayClicked);
+        
+       
         
         let daysArr = [];
         let daysInMonth = new Date(2019, month+1, 0).getDate();
@@ -48,7 +48,7 @@ class Calendar extends Component {
                      daysArr.push( <div key={d+month*100} className="calendar-date calendar-date--disabled" data-calendar-date={date.setDate(d)} data-calendar-status="active">{d}</div>)     
                 } else if(new Date(2019, month, d).getTime() < startDate.getTime() || new Date(2019, month, d).getTime() > endDate.getTime()){
                     daysArr.push(<div key={d+month*100} className="calendar-date calendar-date--disabled" data-calendar-date={date.setDate(d)} data-calendar-status="active">{d}</div>)   
-                } else if(this.state.dayClicked && d === select.getDate()){
+                } else if(d === select.getDate() && select.getMonth() === date.getMonth()){
                     daysArr.push( <div key={d+month*100} className="calendar-date calendar-date--active calendar-date--selected" data-calendar-date={date.setDate(d)} >{d}</div>)
                 } else if(d === now.getDate() && now.getMonth() === date.getMonth()){
                     daysArr.push( <div key={d+month*100} className="calendar-date calendar-date--active" id="calendar-date--today" data-calendar-date={date.setDate(d)} >{d}</div>)

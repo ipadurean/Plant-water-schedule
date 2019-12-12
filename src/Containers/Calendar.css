@@ -4,14 +4,19 @@
 }
 
 .calendar-container {
+  width: 100%;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .schedule-container {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
 
@@ -34,10 +39,6 @@
 }
 
 
-.calendar :active {
-      border-radius: var(--calendar-border-radius);
-      box-shadow: 0 0 0 1px rgba(var(--calendar-today-bg-color), 0.1)
-  }
 
 
 .calendar .calendar-header {
@@ -45,11 +46,6 @@
   display: flex;
   padding: 3px;
   text-transform: uppercase;
-  border-radius: var(--calendar-border-radius);
-}
-
-.calendar .calendar-header svg {
-  fill: var(--calendar-today-color);
 }
 
 .calendar .calendar-header__label {
@@ -61,7 +57,6 @@
 .calendar .calendar-week {
   display: flex;
   flex-wrap: wrap;
-  border-radius: var(--calendar-border-radius);
 }
 
 .calendar .calendar-week span {
@@ -80,7 +75,6 @@
   background-color:white;
   display: flex;
   flex-wrap: wrap;
-  border-radius: var(--calendar-border-radius);
 }
 
 .calendar .calendar-date {
@@ -107,13 +101,11 @@
 
 
 .calendar #calendar-date--today {
-  background-color: var(--calendar-today-bg-color);
-  color: var(--calendar-today-color);
+  background-color: rgb(216, 230, 216);
 }
 
 .calendar .calendar-date--selected {
-  background-color: var(--calendar-selected-bg-color);
-  color: var(--calendar-selected-color);
+  background-color: rgb(176, 201, 176);
   font-size: 14px;
 }
 

@@ -37,11 +37,12 @@ const DailySchedule = (props) => {
 
   return (
     <div className="schedule">
-       <p>Watering schedule for: <b>{new Date(parseInt(props.selectedDay)).toDateString()}</b>
-       </p>
        
         <table>
           <thead>
+            <tr>
+              <th colSpan="2" id="table-top"> Plants that need to be watered on: <u>{new Date(parseInt(props.selectedDay)).toDateString()}</u></th>
+            </tr>
             <tr>
               <th>Plant name</th>
               <th>Needs water every </th>

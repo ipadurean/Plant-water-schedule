@@ -4,8 +4,8 @@
 
 .schedule thead th{
   background-color: rgb(187, 206, 104);
-  height: 50px;
-  width: 150px;
+  height: 30px;
+  width: 250px;
 }
 
 .schedule td{
@@ -15,3 +15,8 @@
   text-align: center;
   padding: 3px 0px;
 }
+
+#table-top{
+  background-color: rgb(211, 190, 97);
+}
+

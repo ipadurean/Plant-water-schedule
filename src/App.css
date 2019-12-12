@@ -2,6 +2,7 @@
 
 
 .App-header {
+  width: 100%;
   background-color: #6e8558;
   min-height: 10vh;
   display: flex;
@@ -13,7 +14,7 @@
 }
 
 .main-container {
-  padding: 1%;
+  width: 100%;
 }
 
 
