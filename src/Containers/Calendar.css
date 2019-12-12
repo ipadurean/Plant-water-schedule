@@ -1,0 +1,126 @@
+
+ .calendar *, .calendar *:before, .calendar *:after {
+  box-sizing: border-box;
+}
+
+.calendar-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.schedule-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.calendar {
+  display: block !important;
+  background-color: white;
+  border-radius: 2px;
+  box-shadow: 1px 1px 2px 1px silver;
+  min-width: 260px !important;
+  max-width: 260px !important;
+  min-height: 250px !important;
+  max-height: 250px !important;
+  padding: 1%;
+ 
+}
+
+.calendar #week-no{
+  font-size: 12px;
+  color: green;
+}
+
+
+.calendar :active {
+      border-radius: var(--calendar-border-radius);
+      box-shadow: 0 0 0 1px rgba(var(--calendar-today-bg-color), 0.1)
+  }
+
+
+.calendar .calendar-header {
+  align-items: center;
+  display: flex;
+  padding: 3px;
+  text-transform: uppercase;
+  border-radius: var(--calendar-border-radius);
+}
+
+.calendar .calendar-header svg {
+  fill: var(--calendar-today-color);
+}
+
+.calendar .calendar-header__label {
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+}
+
+.calendar .calendar-week {
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: var(--calendar-border-radius);
+}
+
+.calendar .calendar-week span {
+  color: rgb(99, 99, 185);
+  flex-direction: column;
+  flex: 0 0 12.5%;
+  font-size: 0.9em;
+  font-weight: bold;
+  max-width: 12.5%;
+  padding: 10px 0px;
+  text-align: center;
+ 
+}
+
+.calendar .calendar-body {
+  background-color:white;
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: var(--calendar-border-radius);
+}
+
+.calendar .calendar-date {
+  align-items: center;
+  background-color: #fff;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 12.5%;
+  max-width: 12.5%;
+  padding: 8px;
+}
+
+.calendar .calendar-date--week{
+  font-size: 14px;
+  color: green;
+}
+
+.calendar .calendar-date--active {
+  font-size: 14px;
+  cursor: pointer;
+}
+
+
+
+.calendar #calendar-date--today {
+  background-color: var(--calendar-today-bg-color);
+  color: var(--calendar-today-color);
+}
+
+.calendar .calendar-date--selected {
+  background-color: var(--calendar-selected-bg-color);
+  color: var(--calendar-selected-color);
+  font-size: 14px;
+}
+
+.calendar .calendar-date--disabled {
+  border-radius: 0;
+  cursor: not-allowed;
+  opacity: 0.2;
+  user-select: none !important;
+  font-size: 14px;
+}
