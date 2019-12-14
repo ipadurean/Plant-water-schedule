@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Calendar renders correctly 1`] = `ShallowWrapper {}`;
+
+exports[`DailySchedule renders correctly 1`] = `ShallowWrapper {}`;

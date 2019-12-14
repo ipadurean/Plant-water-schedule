@@ -10,7 +10,7 @@ class Calendar extends Component {
       constructor() {
         super()
         this.state = {
-          dayClicked:new Date().getTime()
+          dayClicked: Date.now()
         }
       }
 
@@ -44,6 +44,8 @@ class Calendar extends Component {
                 if(new Date(2019, month, d).getDay() === 0 && d !== 1){
                      daysArr.push(<div key={d+50} className="calendar-date calendar-date--week">{getWeekNo(d)}</div>,
                                   <div key={d+month*100} className="calendar-date calendar-date--disabled" data-calendar-date={date.setDate(d)} data-calendar-status="active">{d}</div>)
+                } else if(new Date(2019, month, d).getDay() === 0){
+                                  daysArr.push( <div key={d+month*100} className="calendar-date calendar-date--disabled" data-calendar-date={date.setDate(d)} data-calendar-status="active">{d}</div>)  
                 } else if(new Date(2019, month, d).getDay() === 6){
                      daysArr.push( <div key={d+month*100} className="calendar-date calendar-date--disabled" data-calendar-date={date.setDate(d)} data-calendar-status="active">{d}</div>)     
                 } else if(new Date(2019, month, d).getTime() < startDate.getTime() || new Date(2019, month, d).getTime() > endDate.getTime()){
@@ -63,9 +65,7 @@ class Calendar extends Component {
 
 
 
-     
-
-      getMonthYear = (month) => {
+     getMonthYear = (month) => {
         let months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
         let date = new Date(2019, month)
         return months[month%12] + " " + date.getFullYear()
