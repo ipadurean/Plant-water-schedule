@@ -10,7 +10,7 @@ describe("Calendar", () => {
         expect(app).toMatchSnapshot();
       });
 
-      it("initializes 'state' with a 'dayClicked' of current time in miliqseconds", () => {
+      it("initializes 'state' with a 'dayClicked' of current time in miliseconds", () => {
         expect(app.state().dayClicked.toString().slice(0, 10)).toEqual(Date.now().toString().slice(0, 10));
       });
 
