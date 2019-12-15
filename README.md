@@ -10,19 +10,6 @@ v13.3.0
 6.12.1
 1.21.1
 ```
-If you just freshly installed yarn/npm you are good to go, else you might need to upgrade, for npm I use `n`
-
-```
-npm install -g n
-```
-to install it and after that select at least the stable version (what I used).
-
-```
-n stable
-```
-
-and now you have the latest stable version of node&npm.
-
 
 `yarn install`/`npm install` to install dependencies
 
