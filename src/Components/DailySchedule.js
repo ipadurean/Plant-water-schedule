@@ -31,7 +31,7 @@ const DailySchedule = (props) => {
   
     //returns the schedule on the date selected
     let dailySchedule = (selectedDay) => {
-      let nthDay = (parseInt(selectedDay) - startingDay)/(1000*60*60*24)+1;
+      let nthDay = Math.floor((parseInt(selectedDay) - startingDay)/(1000*60*60*24)+1);
       return createSchedule(plantArr).filter(elem => elem.days.includes(nthDay))
     }
   
@@ -39,8 +39,7 @@ const DailySchedule = (props) => {
 
   return (
     <div className="schedule">
-       
-        <table>
+       <table>
           <thead>
             <tr>
               <th colSpan="2" id="table-top"> Plants that need to be watered on: <u>{new Date(parseInt(props.selectedDay)).toDateString()}</u></th>
